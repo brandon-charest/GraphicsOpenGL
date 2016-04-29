@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include <GL/glew.h> //handles extensions for OpenGL
 #include <SDL/SDL.h>
+#include "GLSLProgram.h"
 
 enum class GameState{PLAY, EXIT};
 
@@ -16,6 +17,7 @@ public:
 
 private:
 	void initSystems();
+	void initShaders();
 	void processInput();
 	void gameLoop();
 	void drawGame();
@@ -25,7 +27,7 @@ private:
 	int _screenWidth;
 	int _screenHeight;
 	GameState _gameState;
-
+	GLSLProgram _colorProgram;
 	Sprite _sprite;
 };
 
